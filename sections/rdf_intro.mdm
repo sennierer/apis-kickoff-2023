@@ -1,0 +1,114 @@
+### RDF
+- Resource Description Framework<!-- .element: class="fragment" -->
+- W3C standard<!-- .element: class="fragment" -->
+- SPARQL query language<!-- .element: class="fragment" -->
+- subject - predicate - object (triple)<!-- .element: class="fragment" -->
+- object - predicate - object2 -> network <!-- .element: class="fragment" -->
+
++++
+
+### Various serialization formats
+- RDF/XML<!-- .element: class="fragment" -->
+- JSON-LD<!-- .element: class="fragment" -->
+- Turtle<!-- .element: class="fragment" -->
+- ...<!-- .element: class="fragment" -->
+
++++
+
+### Example GND Bruno Kreisky
+
+```turtle [1-4|42-43|51-53|76-77]
+@prefix schema: <http://schema.org/> .
+@prefix gndo: <https://d-nb.info/standards/elementset/gnd#> .
+@prefix lib: <http://purl.org/library/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix editeur: <https://ns.editeur.org/thema/> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix umbel: <http://umbel.org/umbel#> .
+@prefix naf: <https://id.loc.gov/authorities/names/> .
+@prefix rdau: <http://rdaregistry.info/Elements/u/> .
+@prefix sf: <http://www.opengis.net/ont/sf#> .
+@prefix bflc: <http://id.loc.gov/ontologies/bflc/> .
+@prefix thesoz: <http://lod.gesis.org/thesoz/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix isbd: <http://iflastandards.info/ns/isbd/elements/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix mesh: <http://id.nlm.nih.gov/mesh/vocab#> .
+@prefix ram: <https://data.bnf.fr/ark:/12148/> .
+@prefix mo: <http://purl.org/ontology/mo/> .
+@prefix marcRole: <http://id.loc.gov/vocabulary/relators/> .
+@prefix agrelon: <https://d-nb.info/standards/elementset/agrelon#> .
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix nsogg: <https://purl.org/bncf/tid/> .
+@prefix dnbt: <https://d-nb.info/standards/elementset/dnb#> .
+@prefix dbp: <http://dbpedia.org/property/> .
+@prefix embne: <https://datos.bne.es/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dnb_intern: <http://dnb.de/> .
+@prefix madsrdf: <http://www.loc.gov/mads/rdf/v1#> .
+@prefix cidoc: <http://www.cidoc-crm.org/cidoc-crm/> .
+@prefix v: <http://www.w3.org/2006/vcard/ns#> .
+@prefix ebu: <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#> .
+@prefix wdrs: <http://www.w3.org/2007/05/powder-s#> .
+@prefix gbv: <http://purl.org/ontology/gbv/> .
+@prefix bibo: <http://purl.org/ontology/bibo/> .
+@prefix agrovoc: <https://aims.fao.org/aos/agrovoc/> .
+@prefix lcsh: <https://id.loc.gov/authorities/subjects/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+
+<https://d-nb.info/gnd/118566512> a gndo:DifferentiatedPerson;
+  wdrs:describedby <https://d-nb.info/gnd/118566512/about> .
+
+<https://d-nb.info/gnd/118566512/about> dcterms:license <http://creativecommons.org/publicdomain/zero/1.0/>;
+  dcterms:modified "2022-08-15T14:31:12.000"^^xsd:dateTime;
+  gndo:descriptionLevel <https://d-nb.info/standards/vocab/gnd/description-level#1> .
+
+<https://d-nb.info/gnd/118566512> gndo:gndIdentifier "118566512";
+  foaf:page <https://de.wikipedia.org/wiki/Bruno_Kreisky>;
+  owl:sameAs <http://dbpedia.org/resource/Bruno_Kreisky>, <http://viaf.org/viaf/31998484>,
+    <http://isni.org/isni/0000000112608767>, <http://www.wikidata.org/entity/Q44517>,
+    <http://id.loc.gov/rwo/agents/n50043948>;
+  gndo:oldAuthorityNumber "(DE-588)1243925787";
+  owl:sameAs <https://d-nb.info/gnd/1243925787>;
+  dnbt:deprecatedUri "https://d-nb.info/gnd/1243925787";
+  gndo:oldAuthorityNumber "(DE-588a)118566512", "(DE-588c)4032993-8";
+  gndo:preferredNameForThePerson "Kreisky, Bruno";
+  gndo:preferredNameEntityForThePerson _:node1h1661tpox3625900 .
+
+_:node1h1661tpox3625900 gndo:forename "Bruno";
+  gndo:surname "Kreisky" .
+
+<https://d-nb.info/gnd/118566512> gndo:familialRelationship <https://d-nb.info/gnd/121036073>;
+  gndo:affiliation <https://d-nb.info/gnd/2029382-3>, <https://d-nb.info/gnd/5060450-8>;
+  gndo:gender <https://d-nb.info/standards/vocab/gnd/gender#male>;
+  gndo:professionOrOccupation <https://d-nb.info/gnd/4046517-2>, <https://d-nb.info/gnd/4029050-5>;
+  gndo:gndSubjectCategory <https://d-nb.info/standards/vocab/gnd/gnd-sc#16.5p>;
+  gndo:geographicAreaCode <https://d-nb.info/standards/vocab/gnd/geographic-area-code#XA-AT>,
+    <https://d-nb.info/standards/vocab/gnd/geographic-area-code#XA-SE>;
+  gndo:biographicalOrHistoricalInformation "Bundeskanzler 1970-1983"@de;
+  gndo:placeOfBirth <https://d-nb.info/gnd/4066009-6>;
+  gndo:placeOfDeath <https://d-nb.info/gnd/4066009-6>;
+  gndo:placeOfExile <https://d-nb.info/gnd/4077258-5>;
+  owl:sameAs <http://www.filmportal.de/person/5B113A52F8F14A879694D08C56BCEE81>;
+  gndo:dateOfBirth "1911-01-22"^^xsd:date;
+  gndo:dateOfDeath "1990-07-29"^^xsd:date .
+```
+
++++
+
+### SPARQL
+- Prefixes<!-- .element: class="fragment" -->
+- Query result clause<!-- .element: class="fragment" -->
+- Define datasets to use (optional)<!-- .element: class="fragment" -->
+- Query modifiers (optional)<!-- .element: class="fragment" -->
+
++++
+
+<!-- .slide: data-background-iframe="https://query.wikidata.org/#%23%20Coordinates%20of%20the%20birth%20places%20of%20people%20named%20Antoine%0A%23defaultView%3AMap%0ASELECT%20%3Fitem%20%3FitemLabel%20%3Fcoord%0AWHERE%0A%7B%0A%20%20%3Fitem%20wdt%3AP31%20wd%3AQ5%20.%20%20%20%23%20human%0A%20%20%3Fitem%20wdt%3AP735%20wd%3AQ15235674.%0A%20%20%3Fitem%20wdt%3AP19%20%3Fplace.%0A%20%20%3Fplace%20wdt%3AP625%20%3Fcoord.%0A%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22fr%22.%20%7D%0A%7D" -->
+
++++
+
+<!-- .slide: data-background-iframe="https://query.wikidata.org/#SELECT%20%3Fitem%20%3FitemLabel%20%3Fcount%0AWHERE%0A%7B%0A%20%20%7B%0A%20%20%20%20SELECT%20%3Fitem%20(COUNT(DISTINCT%20%3Fcountry)%20AS%20%3Fcount)%20WHERE%20%7B%0A%20%20%20%20%20%20%3Fitem%20wdt%3AP31%2Fwdt%3AP279*%20wd%3AQ41176%20.%0A%20%20%20%20%20%20%3Fitem%20wdt%3AP17%20%3Fcountry%20.%0A%20%20%20%20%20%20FILTER%20NOT%20EXISTS%20%7B%20%3Fcountry%20wdt%3AP576%20%3Fend%20%7D%0A%20%20%20%20%7D%0A%20%20%20%20GROUP%20BY%20%3Fitem%0A%20%20%7D%0A%20%20FILTER%20(%20%3Fcount%20%3E%201%20)%0A%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22en%22%20.%20%7D%0A%7D%0AORDER%20BY%20DESC(%3Fcount)%20%3FitemL" -->
